@@ -15,7 +15,8 @@ class Program {
     Console.Write("Type 1 if you want to select the first task, " +
                   "or 2 if you want to choose the second task: ");
     taskSelection = Convert.ToInt32(Console.ReadLine());
-
+    
+    //Processing of the custom task selection and its implementation
     if (taskSelection == codeOfTheFirstTask) {
       int baseA, exponentN, theResultOfRaisingToTheExponent;
 
@@ -30,7 +31,7 @@ class Program {
 
     } else if (taskSelection == codeOfTheSecondTask) {
       int startingNumberX, endingNumberN;
-      int minimumNumber = 100;
+      int minimumNumber = 100; //Number must be >= 100
 
       Console.Write("\nEnter the number x (x >= 100): ");
       startingNumberX = Convert.ToInt32(Console.ReadLine());
@@ -42,13 +43,15 @@ class Program {
         Console.WriteLine($"Transformation result: {endingNumberN}");
       }
     } else {
-      Console.WriteLine("The task code is entered incorrectly. Please, restart the program and try again");
+      Console.WriteLine("The task code is entered incorrectly. " +
+                        "Please, restart the program and try again");
       return;
     }
   }
 
   static int RaisingToTheExponent(int baseA, int exponentN) {
 
+    //At zero exponent returns 1
     if (exponentN == 0) {
       return 1;
     }
@@ -67,7 +70,7 @@ class Program {
     string startingNumberXString;
     string resultNumber;
     int minimumNumberOfDigitsInNumber = 2;
-    char secondDigit;
+    char secondDigit; //The number we will extract from the number and place at the end
 
     startingNumberXString = startingNumberX.ToString();
     if (startingNumberXString.Length < minimumNumberOfDigitsInNumber) {
@@ -80,5 +83,6 @@ class Program {
     resultNumber += secondDigit;
 
     return Convert.ToInt32(resultNumber);
+
   }
 }
