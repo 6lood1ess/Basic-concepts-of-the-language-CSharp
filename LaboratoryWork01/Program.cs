@@ -46,4 +46,39 @@ class Program {
       return;
     }
   }
+
+  static int RaisingToTheExponent(int baseA, int exponentN) {
+
+    if (exponentN == 0) {
+      return 1;
+    }
+
+    int theResultOfRaisingToTheExponent = baseA;
+
+    for (int exponentIndex = 1; exponentIndex < exponentN; ++exponentIndex) {
+      theResultOfRaisingToTheExponent *= baseA;
+    }
+
+    return theResultOfRaisingToTheExponent;
+  }
+
+  static int TransformNumber(int startingNumberX) {
+
+    string startingNumberXString;
+    string resultNumber;
+    int minimumNumberOfDigitsInNumber = 2;
+    char secondDigit;
+
+    startingNumberXString = startingNumberX.ToString();
+    if (startingNumberXString.Length < minimumNumberOfDigitsInNumber) {
+      return startingNumberX;
+    }
+
+    secondDigit = startingNumberXString[1];
+
+    resultNumber = startingNumberXString.Remove(1, 1);
+    resultNumber += secondDigit;
+
+    return Convert.ToInt32(resultNumber);
+  }
 }
