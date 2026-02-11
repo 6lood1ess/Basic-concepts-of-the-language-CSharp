@@ -39,7 +39,7 @@ class Program {
       if (startingNumberX < minimumNumber) {
         Console.WriteLine("Error: number must be >= 100");
       } else {
-        endingNumberN = TransformNumber(startingNumberX);
+        endingNumberN = MoveSecondDigit(startingNumberX);
         Console.WriteLine($"Transformation result: {endingNumberN}");
       }
     } else {
@@ -51,8 +51,9 @@ class Program {
 
   static int RaisingToTheExponent(int baseA, int exponentN) {
 
+    int exponentZero = 0;
     //At zero exponent returns 1
-    if (exponentN == 0) {
+    if (exponentN == exponentZero) {
       return 1;
     }
 
@@ -65,7 +66,7 @@ class Program {
     return theResultOfRaisingToTheExponent;
   }
 
-  static int TransformNumber(int startingNumberX) {
+  static int MoveSecondDigit(int startingNumberX) {
 
     string startingNumberXString;
     string resultNumber;
@@ -83,6 +84,5 @@ class Program {
     resultNumber += secondDigit;
 
     return Convert.ToInt32(resultNumber);
-
   }
 }
